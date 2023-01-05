@@ -3,9 +3,9 @@
 *.dll.config
 *.suo
 *.user
-.vs/*
-packages/*
-./AccCareer.BLL/bin/*
-./AccCareer.BLL/obj/*
-./AccCareer.DAL/bin/*
-./AccCareer.DAL/obj/*
+app/.vs/*
+app/packages/*
+app/AccCareer.BLL/bin/*
+app/AccCareer.BLL/obj/*
+app/AccCareer.DAL/bin/*
+app/AccCareer.DAL/obj/*
