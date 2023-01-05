@@ -9,3 +9,5 @@ app/AccCareer.BLL/bin/*
 app/AccCareer.BLL/obj/*
 app/AccCareer.DAL/bin/*
 app/AccCareer.DAL/obj/*
+app/AccCareer.UI/bin/*
+app/AccCareer.UI/obj/*
