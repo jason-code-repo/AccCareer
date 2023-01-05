@@ -1,0 +1,11 @@
+{\rtf1}
+*.dll
+*.dll.config
+*.suo
+*.user
+.vs/*
+packages/*
+./AccCareer.BLL/bin/*
+./AccCareer.BLL/obj/*
+./AccCareer.DAL/bin/*
+./AccCareer.DAL/obj/*
