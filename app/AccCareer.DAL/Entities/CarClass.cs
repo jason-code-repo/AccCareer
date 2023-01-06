@@ -1,5 +1,8 @@
-﻿namespace AccCareer.DAL.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
+namespace AccCareer.DAL.Entities;
+
+[Table("CarClasses")]
 public class CarClass
 {
     public int Id { get; set; }

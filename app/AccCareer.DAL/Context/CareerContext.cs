@@ -1,4 +1,5 @@
-﻿using AccCareer.DAL.Entities;
+﻿using System.Data.SqlTypes;
+using AccCareer.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace AccCareer.DAL.Context;
@@ -8,9 +9,7 @@ public class CareerContext : DbContext
     private string _dbPath { get; }
     public CareerContext(DbContextOptions<CareerContext> options) : base(options)
     {
-        var folder = Environment.SpecialFolder.LocalApplicationData;
-        var path = Environment.GetFolderPath(folder);
-        _dbPath = Path.Join(path, "CareerDb.db");
+        
     }
     
     public DbSet<Career> Cars { get; set; }
@@ -21,8 +20,28 @@ public class CareerContext : DbContext
     public DbSet<ManufacturerInterestLevel> ManufacturerInterestLevels { get; set; }
     public DbSet<Track> Tracks { get; set; }
     public DbSet<TrackManufacturer> TrackManufacturers { get; set; }
-    
-    protected override void OnConfiguring(DbContextOptionsBuilder options)
-        => options.UseSqlite($"Data Source={_dbPath}");
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Car>()
+            .HasKey(x => x.Id);
+        
+        modelBuilder.Entity<CarClass>()
+            .HasKey(x => x.Id);
+        
+        modelBuilder.Entity<CareerLevel>()
+            .HasKey(x => x.Id);
+        
+        modelBuilder.Entity<Manufacturer>()
+            .HasKey(x => x.Id);
+        
+        modelBuilder.Entity<ManufacturerInterestLevel>()
+            .HasKey(x => new {x.CareerId, x.ManufacturerId});
+        
+        modelBuilder.Entity<Track>()
+            .HasKey(x => x.Id);
+        
+        modelBuilder.Entity<TrackManufacturer>()
+            .HasKey(x => new {x.CareerId, x.TrackId});
+    }
 }

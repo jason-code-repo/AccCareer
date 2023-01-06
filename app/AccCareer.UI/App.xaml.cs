@@ -1,33 +1,43 @@
 ﻿using System.Windows;
+using AccCareer.DAL.Context;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace AccCareer.UI
 {
     
     public partial class App : Application
     {
-        private readonly ServiceProvider serviceProvider;
+        public static IHost? AppHost { get; private set; }
         public App()
         {
-            var services = new ServiceCollection();
-            ConfigureServices(services);
-            serviceProvider = services.BuildServiceProvider();    
-        }
-        
-        private void ConfigureServices(ServiceCollection services)
-        {
-            DiRegister.Set(services);
-            services.AddSingleton<MainWindow>();
+            AppHost = Host
+                .CreateDefaultBuilder()
+                .ConfigureServices((hostContext, services) =>
+                {
+                    services.AddSingleton<MainWindow>();
+                    var connectionString =  hostContext.Configuration.GetConnectionString("Default");
+                    services.AddDbContext<CareerContext>(x => x.UseSqlite(connectionString));
+                    DiRegister.Set(services);
+                })
+                .Build();
         }
 
-        private void OnStartup(object sender, StartupEventArgs e)
+        protected override async void OnStartup(StartupEventArgs e)
         {
-            var mainWindow = serviceProvider.GetService<MainWindow>();
-            mainWindow.Show();
+            await AppHost!.StartAsync();
+            var startupForm = AppHost.Services.GetRequiredService<MainWindow>();
+            startupForm.Show();
+            base.OnStartup(e);
+        }
+
+        protected override async void OnExit(ExitEventArgs e)
+        {
+            await AppHost!.StopAsync();
+            base.OnExit(e);
         }
         
     }
-    
-    
-
 }

@@ -1,5 +1,8 @@
-﻿namespace AccCareer.DAL.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
+namespace AccCareer.DAL.Entities;
+
+[Table("ManufacturerInterestLevels")]
 public class ManufacturerInterestLevel
 {
     public int CareerId { get; set; }
