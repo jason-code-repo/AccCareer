@@ -12,4 +12,8 @@
       <ProjectReference Include="..\AccCareer.DAL\AccCareer.DAL.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="System.Data.SQLite.Core" Version="1.0.117" />
+    </ItemGroup>
+
 </Project>
