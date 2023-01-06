@@ -11,3 +11,5 @@ app/AccCareer.DAL/bin/*
 app/AccCareer.DAL/obj/*
 app/AccCareer.UI/bin/*
 app/AccCareer.UI/obj/*
+app/AccCareer.IOC/bin/*
+app/AccCareer.IOC/obj/*
