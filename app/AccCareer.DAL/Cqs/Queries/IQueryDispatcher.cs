@@ -1,5 +1,4 @@
-﻿using AccCareer.DAL.Cqs.Data;
-using AccCareer.DAL.Cqs.Queries.Handlers;
+﻿using AccCareer.DAL.Cqs.Queries.Handlers;
 using AccCareer.DAL.Cqs.Queries.Requests;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -7,8 +6,8 @@ namespace AccCareer.DAL.Cqs.Queries;
 
 public interface IQueryDispatcher
 {
-    TResult Dispatch<TQuery, TResult>(TQuery query) where TQuery : IQuery where TResult : IResult;
-    Task<TResult> DispatchAsync<TQuery, TResult>(TQuery query) where TQuery : IQuery where TResult : IResult;
+    TResult Dispatch<TQuery, TResult>(TQuery query) where TQuery : IQuery;
+    Task<TResult> DispatchAsync<TQuery, TResult>(TQuery query) where TQuery : IQuery;
 }
 
 public class QueryDispatcher : IQueryDispatcher
@@ -19,15 +18,15 @@ public class QueryDispatcher : IQueryDispatcher
     {
         _serviceProvider = serviceProvider;
     }
-
-    public TResult Dispatch<TQuery, TResult>(TQuery query) where TQuery : IQuery where TResult : IResult
+    
+    public TResult Dispatch<TQuery, TResult>(TQuery query) where TQuery : IQuery
     {
         var handler = _serviceProvider.GetService<IQueryHandler<TQuery, TResult>>();
         return handler.Retrieve(query);
     }
 
-    public async Task<TResult> DispatchAsync<TQuery, TResult>(TQuery query) where TQuery : IQuery where TResult : IResult
-    { 
+    public async Task<TResult> DispatchAsync<TQuery, TResult>(TQuery query) where TQuery : IQuery
+    {
         var handler = _serviceProvider.GetService<IQueryHandler<TQuery, TResult>>();
         return await handler.RetrieveAsync(query);
     }
