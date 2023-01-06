@@ -10,4 +10,11 @@
       <PackageReference Include="SQLite" Version="3.13.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="CareerDb.db" />
+      <Content Include="CareerDb.db">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>
