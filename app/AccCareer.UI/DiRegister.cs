@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.Common;
-using System.IO;
-using AccCareer.DAL.Context;
+﻿using System.Collections.Generic;
 using AccCareer.DAL.Cqs.Commands;
 using AccCareer.DAL.Cqs.Queries;
 using AccCareer.DAL.Cqs.Queries.Handlers;
 using AccCareer.DAL.Cqs.Queries.Requests;
 using AccCareer.DAL.Entities;
-using Microsoft.Data.Sqlite;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AccCareer.UI;
@@ -39,8 +31,10 @@ public static class DiRegister
         
         //query handlers
         services.AddScoped<IQueryHandler<GetAll,List<Car>>,GetAllQueryHandler<Car>>();
+        services.AddScoped<IQueryHandler<GetAll,List<CarClass>>,GetAllQueryHandler<CarClass>>();
+        services.AddScoped<IQueryHandler<GetAll,List<Career>>,GetAllQueryHandler<Career>>();
         services.AddScoped<IQueryHandler<GetAll,List<Manufacturer>>,GetAllQueryHandler<Manufacturer>>();
         services.AddScoped<IQueryHandler<GetAll,List<Track>>,GetAllQueryHandler<Track>>();
-        services.AddScoped<IQueryHandler<GetAll,List<CarClass>>,GetAllQueryHandler<CarClass>>();
+        
     }
 }

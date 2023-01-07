@@ -7,7 +7,44 @@
         mc:Ignorable="d"
         Title="ACC Career" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
+        <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto">
+            <MenuItem Header="Careers">
+                <MenuItem 
+                    Header="Browse" 
+                    HorizontalAlignment="Left" 
+                    Width="140"
+                    Name="CareerBrowseMenuItem"
+                    Click="CareerBrowseMenuItem_Click"/>
+                <MenuItem 
+                    Header="Create" 
+                    HorizontalAlignment="Left" 
+                    Width="140"
+                    Name="CareerCreateMenuItem"
+                    Click="CareerCreateMenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Settings">
+                <MenuItem 
+                    Header="Browse" 
+                    HorizontalAlignment="Left" 
+                    Width="140"
+                    Name="MenuItemOne"
+                    Click="MenuItemOne_Click"/>
+                <MenuItem 
+                    Header="Create" 
+                    HorizontalAlignment="Left" 
+                    Width="140"
+                    Name="MenuItemTwo"
+                    Click="MenuItemTwo_Click"/>
+                <Separator HorizontalAlignment="Left" Width="140"/>
+                <MenuItem 
+                    Header="Three..." 
+                    HorizontalAlignment="Left" 
+                    Width="140"
+                    Name="MenuItemThree"
+                    Click="MenuItemThree_Click"/>
+            </MenuItem>
+        </Menu>
+        <!--<Grid.ColumnDefinitions>
            <ColumnDefinition Width="20" />
            <ColumnDefinition Width="auto" />
            <ColumnDefinition Width="*" /> 
@@ -18,12 +55,6 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="10" />
-        </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" Grid.Row="1" Text="Text">
-        </TextBlock>
-        <Menu Grid.Column="0" Grid.Row="0" Name="Menu">
-            Menu
-            <MenuItem Name="New" >New</MenuItem>
-        </Menu>   
+        </Grid.RowDefinitions>-->
     </Grid>
 </Window>

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 using AccCareer.DAL.Cqs.Queries;
-using AccCareer.DAL.Cqs.Queries.Requests;
-using AccCareer.DAL.Entities;
 
 namespace AccCareer.UI
 {
@@ -16,12 +12,38 @@ namespace AccCareer.UI
             _dispatcher = dispatcher;
             InitializeComponent();
 
-            var cars = _dispatcher.Dispatch<GetAll, List<Car>>(new GetAll());
-            foreach (var car in cars)
+            /*
+            var careers = _dispatcher.Dispatch<GetAll, List<Career>>(new GetAll());
+            foreach (var career in careers)
             {
-                Console.Write(car.Model);    
-            }
-            
+                CareersListBox.Items.Add(career);
+            }*/
+        }
+        
+
+        private void MenuItemOne_Click(object sender, RoutedEventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void MenuItemTwo_Click(object sender, RoutedEventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void MenuItemThree_Click(object sender, RoutedEventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void CareerCreateMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void CareerBrowseMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            //throw new NotImplementedException();
         }
     }
 }
