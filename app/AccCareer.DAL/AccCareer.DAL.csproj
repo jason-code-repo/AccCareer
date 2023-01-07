@@ -13,11 +13,14 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="CareerDb.db" />
+      <Folder Include="Cqs\Data" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Cqs\Data" />
+      <None Remove="CareerDb.db" />
+      <Content Include="CareerDb.db">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

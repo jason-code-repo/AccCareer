@@ -6,7 +6,6 @@ namespace AccCareer.DAL.Context;
 
 public class CareerContext : DbContext
 {
-    private string _dbPath { get; }
     public CareerContext(DbContextOptions<CareerContext> options) : base(options)
     {
         

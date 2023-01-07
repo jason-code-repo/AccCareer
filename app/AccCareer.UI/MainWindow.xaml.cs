@@ -1,5 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows;
 using AccCareer.DAL.Cqs.Queries;
+using AccCareer.DAL.Cqs.Queries.Requests;
+using AccCareer.DAL.Entities;
 
 namespace AccCareer.UI
 {
@@ -12,12 +16,9 @@ namespace AccCareer.UI
             _dispatcher = dispatcher;
             InitializeComponent();
 
-            /*
-            var careers = _dispatcher.Dispatch<GetAll, List<Career>>(new GetAll());
-            foreach (var career in careers)
-            {
-                CareersListBox.Items.Add(career);
-            }*/
+            /*var careers = _dispatcher.Dispatch<GetAll, List<Car>>(new GetAll());
+            Console.Out.Write(careers);*/
+            
         }
         
 
