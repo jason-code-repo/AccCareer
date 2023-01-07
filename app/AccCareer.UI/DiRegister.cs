@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.Common;
 using System.IO;
 using AccCareer.DAL.Context;
 using AccCareer.DAL.Cqs.Commands;
@@ -7,6 +10,7 @@ using AccCareer.DAL.Cqs.Queries;
 using AccCareer.DAL.Cqs.Queries.Handlers;
 using AccCareer.DAL.Cqs.Queries.Requests;
 using AccCareer.DAL.Entities;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -28,7 +32,6 @@ public static class DiRegister
 
     private static void SetDal(IServiceCollection services)
     {
-        services.AddScoped<DbContext, CareerContext>();
         services.AddScoped<ICommandDispatcher, CommandDispatcher>();
         services.AddScoped<IQueryDispatcher, QueryDispatcher>();
         services.AddScoped<ICommandDispatcher, CommandDispatcher>();
