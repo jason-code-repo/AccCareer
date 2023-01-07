@@ -1,16 +1,15 @@
-﻿using System.Collections.Generic;
-using AccCareer.DAL.Cqs.Commands;
+﻿using AccCareer.DAL.Cqs.Commands;
 using AccCareer.DAL.Cqs.Queries;
 using AccCareer.DAL.Cqs.Queries.Handlers;
 using AccCareer.DAL.Cqs.Queries.Requests;
 using AccCareer.DAL.Entities;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AccCareer.UI;
+namespace AccCareer.IOC;
 
-public static class DiRegister
+public static class BindingRegister
 {
-    public static void Set(IServiceCollection services)
+    public static void SetDependencies(IServiceCollection services)
     {
 
         SetDal(services);
@@ -37,4 +36,5 @@ public static class DiRegister
         services.AddScoped<IQueryHandler<GetAll,List<Track>>,GetAllQueryHandler<Track>>();
         
     }
+    
 }

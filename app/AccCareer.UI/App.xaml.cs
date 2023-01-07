@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using AccCareer.DAL.Context;
+using AccCareer.IOC;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,7 +20,7 @@ namespace AccCareer.UI
                     services.AddSingleton<MainWindow>();
                     services.AddDbContext<CareerContext>(x => x.UseSqlite("Data Source=.\\CareerDb.db;"));
                     services.AddScoped<DbContext>(x => x.GetService<CareerContext>());
-                    DiRegister.Set(services);
+                    BindingRegister.SetDependencies(services);
                 })
                 .Build();
         }

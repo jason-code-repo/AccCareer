@@ -10,6 +10,7 @@
     <ItemGroup>
       <ProjectReference Include="..\AccCareer.BLL\AccCareer.BLL.csproj" />
       <ProjectReference Include="..\AccCareer.DAL\AccCareer.DAL.csproj" />
+      <ProjectReference Include="..\AccCareer.IOC\AccCareer.IOC.csproj" />
     </ItemGroup>
 
     <ItemGroup>
