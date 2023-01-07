@@ -38,6 +38,9 @@ public static class DiRegister
         
         
         //query handlers
-        services.AddScoped<IQueryHandler<GetAll,List<Car>>,GetAllCarsHandler>();
+        services.AddScoped<IQueryHandler<GetAll,List<Car>>,GetAllQueryHandler<Car>>();
+        services.AddScoped<IQueryHandler<GetAll,List<Manufacturer>>,GetAllQueryHandler<Manufacturer>>();
+        services.AddScoped<IQueryHandler<GetAll,List<Track>>,GetAllQueryHandler<Track>>();
+        services.AddScoped<IQueryHandler<GetAll,List<CarClass>>,GetAllQueryHandler<CarClass>>();
     }
 }
