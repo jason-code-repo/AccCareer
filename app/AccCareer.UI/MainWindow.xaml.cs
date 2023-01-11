@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 using AccCareer.DAL.Cqs.Queries;
-using AccCareer.DAL.Cqs.Queries.Requests;
-using AccCareer.DAL.Entities;
 
 namespace AccCareer.UI
 {
