@@ -24,37 +24,29 @@
             </MenuItem>
             <MenuItem Header="Settings">
                 <MenuItem 
-                    Header="Browse" 
+                    Header="Cars" 
                     HorizontalAlignment="Left" 
                     Width="140"
-                    Name="MenuItemOne"
-                    Click="MenuItemOne_Click"/>
+                    Name="CarsSettingsMenuItem"
+                    Click="CarsSettingsMenuItem_Click"/>
                 <MenuItem 
-                    Header="Create" 
+                    Header="Tracks" 
                     HorizontalAlignment="Left" 
                     Width="140"
-                    Name="MenuItemTwo"
-                    Click="MenuItemTwo_Click"/>
-                <Separator HorizontalAlignment="Left" Width="140"/>
+                    Name="TracksSettingsMenuItem"
+                    Click="TracksSettingsMenuItem_Click"/>
+                <!--<Separator HorizontalAlignment="Left" Width="140"/>
                 <MenuItem 
                     Header="Three..." 
                     HorizontalAlignment="Left" 
                     Width="140"
                     Name="MenuItemThree"
-                    Click="MenuItemThree_Click"/>
+                    Click="MenuItemThree_Click"/>-->
             </MenuItem>
         </Menu>
-        <!--<Grid.ColumnDefinitions>
-           <ColumnDefinition Width="20" />
-           <ColumnDefinition Width="auto" />
-           <ColumnDefinition Width="*" /> 
-           <ColumnDefinition Width="20" />
-       </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="10" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="10" />
-        </Grid.RowDefinitions>-->
+        <Frame x:Name="Main" Margin="0,35,0,0" NavigationUIVisibility="Hidden">
+            
+        </Frame>
+       
     </Grid>
 </Window>

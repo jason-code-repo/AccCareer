@@ -18,29 +18,24 @@ namespace AccCareer.UI
         }
         
 
-        private void MenuItemOne_Click(object sender, RoutedEventArgs e)
+        private void CarsSettingsMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            //throw new NotImplementedException();
+            Main.Content = new CarConfigurationPage();
         }
 
-        private void MenuItemTwo_Click(object sender, RoutedEventArgs e)
+        private void TracksSettingsMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            //throw new NotImplementedException();
-        }
-
-        private void MenuItemThree_Click(object sender, RoutedEventArgs e)
-        {
-            //throw new NotImplementedException();
-        }
-
-        private void CareerCreateMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            //throw new NotImplementedException();
+            Main.Content = new TrackConfigurationPage();
         }
 
         private void CareerBrowseMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            //throw new NotImplementedException();
+            
+        }
+
+        private void CareerCreateMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
