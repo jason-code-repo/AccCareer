@@ -7,6 +7,6 @@
       mc:Ignorable="d"
       Title="TrackConfigurationPage" Height="450" Width="800">
     <Grid>
-        <TextBlock Text="Track Configuration Page" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></TextBlock>
+        <TextBlock Text="Track Configuration Page Test" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></TextBlock>
     </Grid>
 </Page>
